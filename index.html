@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>const exports = {};</script>
+        <style>
+            :root {
+                transition: 0.2s;
+            }
+
+            html,
+            body {
+                display: grid;
+                place-items: center;
+                gap: 1rem;
+                width: 100%;
+                height: 100%;
+                font-family: system-ui;
+                background-color: deeppink;
+                color: #ffffffbf;
+            }
+
+            body[error] #log {
+                color: red;
+            }
+
+            body > span {
+                transition: var(--transition);
+            }
+
+            #version {
+                align-self: end;
+                font-size: 2rem;
+            }
+
+            #log {
+                font-style: italic;
+                align-self: start;
+            }
+        </style>
+    </head>
+    <body>
+        <span id="version"></span>
+        <span id="log">Initialising...</span>
+        <script type="module" src="./scripts/renderer.js"></script>
+    </body>
+</html>

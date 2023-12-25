@@ -1,0 +1,41 @@
+{
+  "name": "electronupdater",
+  "version": "0.0.0",
+  "description": "Testing repo for electro-builder's autoUpdater.",
+  "private": true,
+  "main": "./scripts/main.js",
+  "dependencies": {
+    "electron-updater": "^6.1.7"
+  },
+  "devDependencies": {
+    "electron": "^27.0.3",
+    "electron-builder": "^24.9.1",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "dev": "npx tsc && electron ./scripts/main.js",
+    "publish": "electron-builder -p always"
+  },
+  "author": "Jackson0ne",
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/jackson0ne/electronupdater.git"
+  },
+  "build": {
+    "appId": "com.electronupdater.jackson0ne",
+    "productName": "Electron Updater",
+    "win": {
+      "target": "nsis"
+    },
+    "publish": {
+      "vPrefixedTagName": false
+    },
+    "nsis": {
+      "oneClick": true,
+      "artifactName": "electronupdater_v${version}.exe",
+      "createDesktopShortcut": false,
+      "deleteAppDataOnUninstall": true,
+      "shortcutName": "Electron Updater (V${version})"
+    }
+  }
+}
